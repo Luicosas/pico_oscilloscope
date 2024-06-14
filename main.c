@@ -1,6 +1,8 @@
 #include <stdio.h>
+#include "pico/stdlib.h"
 
-int main(void) {
-    printf("Hello, World!\n");
+int main() {
+    setup_default_uart();
+    printf("Hello, world!\n");
     return 0;
 }
