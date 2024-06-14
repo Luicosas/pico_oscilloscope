@@ -1,8 +1,13 @@
 cmake_minimum_required(VERSION 3.28)
 
+if (NOT DEFINED PICO_SDK_PATH) 
+  set(PICO_SDK_PATH "${CMAKE_CURRENT_LIST_DIR}/../pico-sdk/")
+endif()
+message(STATUS "PICO_SDK_PATH: ${PICO_SDK_PATH}")
+
 # initialize pico-sdk from submodule
 # note: this must happen before project()
-include(pico-sdk/pico_sdk_init.cmake)
+include(pico_sdk_import.cmake)
 
 project(pico_oscilloscope)
 
