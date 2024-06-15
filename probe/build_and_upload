@@ -1,5 +1,5 @@
 if [ -f "picotool" ]; then
-    cmake --build ./cmake-build-debug -j 8 && sudo ./picotool load -f -x ./cmake-build-debug/pico_oscilloscope.uf2
+    cmake --build ./cmake-build-debug --target probe -j 8 && sudo ./picotool load -f -x ./cmake-build-debug/probe.uf2
 else
     echo "picotool does not exist in current directory, please link or copy picotool into current directory."
 fi
